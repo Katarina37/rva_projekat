@@ -1,0 +1,12 @@
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Component1\obj\Debug\AirQuality.Component1.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Component1\obj\Debug\Views\AddReadingDialog.baml
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Component1\obj\Debug\Views\AddStationDialog.baml
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Component1\obj\Debug\MainWindow.g.cs
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Component1\obj\Debug\Views\AddReadingDialog.g.cs
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Component1\obj\Debug\Views\AddStationDialog.g.cs
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Component1\obj\Debug\Views\ReadingView.g.cs
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Component1\obj\Debug\Views\StationView.g.cs
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Component1\obj\Debug\App.g.cs
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Component1\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Component1\obj\Debug\AirQuality.Component1_MarkupCompile.cache
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Component1\obj\Debug\AirQuality.Component1_MarkupCompile.lref

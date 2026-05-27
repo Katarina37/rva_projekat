@@ -1,0 +1,504 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{27E745D5-61E9-46BC-A952-0C710804D127}|AirQuality.Common\\AirQuality.Common.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.common\\interfaces\\imonitoringstationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27E745D5-61E9-46BC-A952-0C710804D127}|AirQuality.Common\\AirQuality.Common.csproj|solutionrelative:airquality.common\\interfaces\\imonitoringstationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27E745D5-61E9-46BC-A952-0C710804D127}|AirQuality.Common\\AirQuality.Common.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.common\\models\\monitoringstation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27E745D5-61E9-46BC-A952-0C710804D127}|AirQuality.Common\\AirQuality.Common.csproj|solutionrelative:airquality.common\\models\\monitoringstation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27E745D5-61E9-46BC-A952-0C710804D127}|AirQuality.Common\\AirQuality.Common.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.common\\models\\airqualitystate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27E745D5-61E9-46BC-A952-0C710804D127}|AirQuality.Common\\AirQuality.Common.csproj|solutionrelative:airquality.common\\models\\airqualitystate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27E745D5-61E9-46BC-A952-0C710804D127}|AirQuality.Common\\AirQuality.Common.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.common\\models\\airqualityreading.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27E745D5-61E9-46BC-A952-0C710804D127}|AirQuality.Common\\AirQuality.Common.csproj|solutionrelative:airquality.common\\models\\airqualityreading.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27E745D5-61E9-46BC-A952-0C710804D127}|AirQuality.Common\\AirQuality.Common.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.common\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27E745D5-61E9-46BC-A952-0C710804D127}|AirQuality.Common\\AirQuality.Common.csproj|solutionrelative:airquality.common\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.component1\\commands\\editstationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|solutionrelative:airquality.component1\\commands\\editstationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.component1\\commands\\editreadingcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|solutionrelative:airquality.component1\\commands\\editreadingcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.component1\\commands\\deletestationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|solutionrelative:airquality.component1\\commands\\deletestationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.component1\\commands\\deletereadingcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|solutionrelative:airquality.component1\\commands\\deletereadingcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.component1\\commands\\addstationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|solutionrelative:airquality.component1\\commands\\addstationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.component1\\commands\\addreadingcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|solutionrelative:airquality.component1\\commands\\addreadingcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.component1\\helpers\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|solutionrelative:airquality.component1\\helpers\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.component1\\interfaces\\iundoablecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|solutionrelative:airquality.component1\\interfaces\\iundoablecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.component1\\services\\undoredoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|solutionrelative:airquality.component1\\services\\undoredoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.component1\\services\\logservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|solutionrelative:airquality.component1\\services\\logservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.component1\\services\\dataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|solutionrelative:airquality.component1\\services\\dataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.component1\\viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|solutionrelative:airquality.component1\\viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.component1\\viewmodels\\readingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|solutionrelative:airquality.component1\\viewmodels\\readingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.component1\\viewmodels\\stationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|solutionrelative:airquality.component1\\viewmodels\\stationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.component1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|solutionrelative:airquality.component1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.component1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|solutionrelative:airquality.component1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.component1\\views\\stationview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|solutionrelative:airquality.component1\\views\\stationview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.component1\\views\\readingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|solutionrelative:airquality.component1\\views\\readingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.component1\\views\\addstationdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|solutionrelative:airquality.component1\\views\\addstationdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.component1\\views\\addreadingdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|solutionrelative:airquality.component1\\views\\addreadingdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.component1\\views\\stationview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|solutionrelative:airquality.component1\\views\\stationview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|c:\\users\\user\\desktop\\rva_projekat_tim12\\airqualitymonitoring\\airquality.component1\\views\\readingview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65140EA0-C189-4485-93A8-F7B8A9CE94FE}|AirQuality.Component1\\AirQuality.Component1.csproj|solutionrelative:airquality.component1\\views\\readingview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 60,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 170,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IMonitoringStationService.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Common\\Interfaces\\IMonitoringStationService.cs",
+              "RelativeDocumentMoniker": "AirQuality.Common\\Interfaces\\IMonitoringStationService.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Common\\Interfaces\\IMonitoringStationService.cs",
+              "RelativeToolTip": "AirQuality.Common\\Interfaces\\IMonitoringStationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T16:27:21.322Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MonitoringStation.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Common\\Models\\MonitoringStation.cs",
+              "RelativeDocumentMoniker": "AirQuality.Common\\Models\\MonitoringStation.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Common\\Models\\MonitoringStation.cs",
+              "RelativeToolTip": "AirQuality.Common\\Models\\MonitoringStation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T16:27:17.845Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AirQualityState.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Common\\Models\\AirQualityState.cs",
+              "RelativeDocumentMoniker": "AirQuality.Common\\Models\\AirQualityState.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Common\\Models\\AirQualityState.cs",
+              "RelativeToolTip": "AirQuality.Common\\Models\\AirQualityState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T16:27:16.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AirQualityReading.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Common\\Models\\AirQualityReading.cs",
+              "RelativeDocumentMoniker": "AirQuality.Common\\Models\\AirQualityReading.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Common\\Models\\AirQualityReading.cs",
+              "RelativeToolTip": "AirQuality.Common\\Models\\AirQualityReading.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T16:27:14.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Common\\Class1.cs",
+              "RelativeDocumentMoniker": "AirQuality.Common\\Class1.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Common\\Class1.cs",
+              "RelativeToolTip": "AirQuality.Common\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T16:27:12.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EditStationCommand.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Commands\\EditStationCommand.cs",
+              "RelativeDocumentMoniker": "AirQuality.Component1\\Commands\\EditStationCommand.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Commands\\EditStationCommand.cs",
+              "RelativeToolTip": "AirQuality.Component1\\Commands\\EditStationCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T16:27:08.02Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EditReadingCommand.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Commands\\EditReadingCommand.cs",
+              "RelativeDocumentMoniker": "AirQuality.Component1\\Commands\\EditReadingCommand.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Commands\\EditReadingCommand.cs",
+              "RelativeToolTip": "AirQuality.Component1\\Commands\\EditReadingCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T16:27:06.879Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DeleteStationCommand.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Commands\\DeleteStationCommand.cs",
+              "RelativeDocumentMoniker": "AirQuality.Component1\\Commands\\DeleteStationCommand.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Commands\\DeleteStationCommand.cs",
+              "RelativeToolTip": "AirQuality.Component1\\Commands\\DeleteStationCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T16:27:05.692Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DeleteReadingCommand.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Commands\\DeleteReadingCommand.cs",
+              "RelativeDocumentMoniker": "AirQuality.Component1\\Commands\\DeleteReadingCommand.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Commands\\DeleteReadingCommand.cs",
+              "RelativeToolTip": "AirQuality.Component1\\Commands\\DeleteReadingCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T16:27:04.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AddStationCommand.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Commands\\AddStationCommand.cs",
+              "RelativeDocumentMoniker": "AirQuality.Component1\\Commands\\AddStationCommand.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Commands\\AddStationCommand.cs",
+              "RelativeToolTip": "AirQuality.Component1\\Commands\\AddStationCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T16:27:03.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AddReadingCommand.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Commands\\AddReadingCommand.cs",
+              "RelativeDocumentMoniker": "AirQuality.Component1\\Commands\\AddReadingCommand.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Commands\\AddReadingCommand.cs",
+              "RelativeToolTip": "AirQuality.Component1\\Commands\\AddReadingCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T16:27:01.457Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RelayCommand.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Helpers\\RelayCommand.cs",
+              "RelativeDocumentMoniker": "AirQuality.Component1\\Helpers\\RelayCommand.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Helpers\\RelayCommand.cs",
+              "RelativeToolTip": "AirQuality.Component1\\Helpers\\RelayCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T16:26:57.778Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IUndoableCommand.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Interfaces\\IUndoableCommand.cs",
+              "RelativeDocumentMoniker": "AirQuality.Component1\\Interfaces\\IUndoableCommand.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Interfaces\\IUndoableCommand.cs",
+              "RelativeToolTip": "AirQuality.Component1\\Interfaces\\IUndoableCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T16:26:53.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UndoRedoService.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Services\\UndoRedoService.cs",
+              "RelativeDocumentMoniker": "AirQuality.Component1\\Services\\UndoRedoService.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Services\\UndoRedoService.cs",
+              "RelativeToolTip": "AirQuality.Component1\\Services\\UndoRedoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T16:26:49.16Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "LogService.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Services\\LogService.cs",
+              "RelativeDocumentMoniker": "AirQuality.Component1\\Services\\LogService.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Services\\LogService.cs",
+              "RelativeToolTip": "AirQuality.Component1\\Services\\LogService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T16:26:47.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "DataService.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Services\\DataService.cs",
+              "RelativeDocumentMoniker": "AirQuality.Component1\\Services\\DataService.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Services\\DataService.cs",
+              "RelativeToolTip": "AirQuality.Component1\\Services\\DataService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T16:26:45.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "BaseViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\ViewModels\\BaseViewModel.cs",
+              "RelativeDocumentMoniker": "AirQuality.Component1\\ViewModels\\BaseViewModel.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\ViewModels\\BaseViewModel.cs",
+              "RelativeToolTip": "AirQuality.Component1\\ViewModels\\BaseViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T16:26:42.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ReadingViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\ViewModels\\ReadingViewModel.cs",
+              "RelativeDocumentMoniker": "AirQuality.Component1\\ViewModels\\ReadingViewModel.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\ViewModels\\ReadingViewModel.cs",
+              "RelativeToolTip": "AirQuality.Component1\\ViewModels\\ReadingViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T16:26:40.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "StationViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\ViewModels\\StationViewModel.cs",
+              "RelativeDocumentMoniker": "AirQuality.Component1\\ViewModels\\StationViewModel.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\ViewModels\\StationViewModel.cs",
+              "RelativeToolTip": "AirQuality.Component1\\ViewModels\\StationViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T16:26:38.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "AirQuality.Component1\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\MainWindow.xaml.cs",
+              "RelativeToolTip": "AirQuality.Component1\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T16:26:35.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "AirQuality.Component1\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\MainWindow.xaml",
+              "RelativeToolTip": "AirQuality.Component1\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-27T16:26:33.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "StationView.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Views\\StationView.xaml.cs",
+              "RelativeDocumentMoniker": "AirQuality.Component1\\Views\\StationView.xaml.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Views\\StationView.xaml.cs",
+              "RelativeToolTip": "AirQuality.Component1\\Views\\StationView.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T16:26:15.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "StationView.xaml",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Views\\StationView.xaml",
+              "RelativeDocumentMoniker": "AirQuality.Component1\\Views\\StationView.xaml",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Views\\StationView.xaml",
+              "RelativeToolTip": "AirQuality.Component1\\Views\\StationView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-27T16:25:50.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ReadingView.xaml",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Views\\ReadingView.xaml",
+              "RelativeDocumentMoniker": "AirQuality.Component1\\Views\\ReadingView.xaml",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Views\\ReadingView.xaml",
+              "RelativeToolTip": "AirQuality.Component1\\Views\\ReadingView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-27T16:21:24.792Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AddReadingDialog.xaml",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Views\\AddReadingDialog.xaml",
+              "RelativeDocumentMoniker": "AirQuality.Component1\\Views\\AddReadingDialog.xaml",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Views\\AddReadingDialog.xaml",
+              "RelativeToolTip": "AirQuality.Component1\\Views\\AddReadingDialog.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-27T16:21:22.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "AddStationDialog.xaml",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Views\\AddStationDialog.xaml",
+              "RelativeDocumentMoniker": "AirQuality.Component1\\Views\\AddStationDialog.xaml",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Views\\AddStationDialog.xaml",
+              "RelativeToolTip": "AirQuality.Component1\\Views\\AddStationDialog.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-27T16:21:16.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ReadingView.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Views\\ReadingView.xaml.cs",
+              "RelativeDocumentMoniker": "AirQuality.Component1\\Views\\ReadingView.xaml.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\rva_projekat_tim12\\AirQualityMonitoring\\AirQuality.Component1\\Views\\ReadingView.xaml.cs",
+              "RelativeToolTip": "AirQuality.Component1\\Views\\ReadingView.xaml.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAADwvxMAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T16:20:57.771Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

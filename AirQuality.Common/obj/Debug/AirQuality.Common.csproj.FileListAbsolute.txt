@@ -1,0 +1,6 @@
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Common\bin\Debug\AirQuality.Common.dll
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Common\bin\Debug\AirQuality.Common.pdb
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Common\obj\Debug\AirQuality.Common.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Common\obj\Debug\AirQuality.Common.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Common\obj\Debug\AirQuality.Common.dll
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Common\obj\Debug\AirQuality.Common.pdb
