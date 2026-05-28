@@ -13,16 +13,13 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!-- Naslov -->
-        <TextBlock Grid.Row="0" Text="Mjerenja kvaliteta vazduha" FontSize="18"
-                   FontWeight="Bold" Margin="0,0,0,10"/>
+        <TextBlock Grid.Row="0" Text="Mjerenja kvaliteta vazduha"
+                   FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
 
-        <!-- Pretraga -->
-        <TextBox Grid.Row="1" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
-                 Margin="0,0,0,10" Padding="5"
-                 Tag="Pretraži po stanici, stanju, PM2.5..."/>
+        <TextBox Grid.Row="1"
+                 Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
+                 Margin="0,0,0,10" Padding="5"/>
 
-        <!-- Tabela mjerenja -->
         <DataGrid Grid.Row="2"
                   ItemsSource="{Binding Readings}"
                   SelectedItem="{Binding SelectedReading}"
@@ -30,18 +27,28 @@
                   CanUserAddRows="False"
                   IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Stanica ID" Binding="{Binding StationId}" Width="220"/>
-                <DataGridTextColumn Header="Datum i vrijeme" Binding="{Binding ReadingTime, StringFormat='{}{0:dd.MM.yyyy HH:mm}'}" Width="140"/>
-                <DataGridTextColumn Header="PM2.5 (μg/m³)" Binding="{Binding PM25}" Width="120"/>
-                <DataGridTextColumn Header="NO2 (μg/m³)" Binding="{Binding NO2Level}" Width="120"/>
-                <DataGridTextColumn Header="Ozon (μg/m³)" Binding="{Binding OzoneLevel}" Width="120"/>
-                <DataGridTextColumn Header="Stanje" Binding="{Binding State}" Width="100"/>
+                <DataGridTextColumn Header="Stanica ID"
+                                    Binding="{Binding StationId}" Width="250"/>
+                <DataGridTextColumn Header="Datum i vrijeme"
+                                    Binding="{Binding ReadingTime, StringFormat={}{0:dd.MM.yyyy HH:mm}}"
+                                    Width="150"/>
+                <DataGridTextColumn Header="PM2.5"
+                                    Binding="{Binding PM25}" Width="80"/>
+                <DataGridTextColumn Header="NO2"
+                                    Binding="{Binding NO2Level}" Width="80"/>
+                <DataGridTextColumn Header="Ozon"
+                                    Binding="{Binding OzoneLevel}" Width="80"/>
+                <DataGridTextColumn Header="Stanje"
+                                    Binding="{Binding State}" Width="100"/>
             </DataGrid.Columns>
         </DataGrid>
 
-        <!-- Dugmad -->
         <StackPanel Grid.Row="3" Orientation="Horizontal"
                     HorizontalAlignment="Right" Margin="0,10,0,0">
+            <Button Content="↩ Undo" Command="{Binding UndoCommand}"
+                    Width="80" Margin="5,0"/>
+            <Button Content="↪ Redo" Command="{Binding RedoCommand}"
+                    Width="80" Margin="5,0"/>
             <Button Content="Dodaj" Command="{Binding AddCommand}"
                     Width="80" Margin="5,0"/>
             <Button Content="Izmijeni" Command="{Binding EditCommand}"

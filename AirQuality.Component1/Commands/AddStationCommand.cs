@@ -1,35 +1,35 @@
 ﻿using AirQuality.Common.Models;
 using AirQuality.Component1.Interfaces;
-using AirQuality.Component1.Services;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace AirQuality.Component1.Commands
 {
     public class AddStationCommand : IUndoableCommand
     {
-        private readonly DataService dataService;
-        private readonly ObservableCollection<MonitoringStation> stations;
-        private readonly MonitoringStation station;
+        private readonly MonitoringStation _station;
+        private readonly List<MonitoringStation> _dataList;
+        private readonly ObservableCollection<MonitoringStation> _observableList;
 
-        public AddStationCommand(DataService dataService,
-            ObservableCollection<MonitoringStation> stations,
-            MonitoringStation station)
+        public AddStationCommand(MonitoringStation station,
+            List<MonitoringStation> dataList,
+            ObservableCollection<MonitoringStation> observableList)
         {
-            this.dataService = dataService;
-            this.stations = stations;
-            this.station = station;
+            _station = station;
+            _dataList = dataList;
+            _observableList = observableList;
         }
 
         public void Execute()
         {
-            dataService.Stations.Add(station);
-            stations.Add(station);
+            _dataList.Add(_station);
+            _observableList.Add(_station);
         }
 
         public void Undo()
         {
-            dataService.Stations.Remove(station);
-            stations.Remove(station);
+            _dataList.Remove(_station);
+            _observableList.Remove(_station);
         }
     }
 }

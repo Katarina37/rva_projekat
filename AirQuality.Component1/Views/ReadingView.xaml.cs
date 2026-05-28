@@ -17,7 +17,7 @@ namespace AirQuality.Component1.Views
     /// <summary>
     /// Interaction logic for ReadingView.xaml
     /// </summary>
-    public partial class ReadingView : Window
+    public partial class ReadingView : UserControl
     {
         public ReadingView()
         {

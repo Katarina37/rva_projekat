@@ -4,33 +4,36 @@
         xmlns:views="clr-namespace:AirQuality.Component1.Views"
         Title="Sistem za praćenje kvaliteta vazduha" 
         Height="600" Width="900">
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Navigacija -->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" 
-                    Background="#2C3E50" Margin="0,0,0,0">
-            <Button Content="Stanice" Name="BtnStations" 
-                    Click="BtnStations_Click"
-                    Foreground="White" Background="Transparent" 
-                    BorderThickness="0" Padding="15,10"/>
-            <Button Content="Mjerenja" Name="BtnReadings" 
-                    Click="BtnReadings_Click"
-                    Foreground="White" Background="Transparent" 
-                    BorderThickness="0" Padding="15,10"/>
-            <Button Content="↩ Undo" Name="BtnUndo" Click="BtnUndo_Click"
-                    Foreground="White" Background="Transparent"
-                    BorderThickness="0" Padding="15,10"/>
-            <Button Content="↪ Redo" Name="BtnRedo" Click="BtnRedo_Click"
-                    Foreground="White" Background="Transparent"
-                    BorderThickness="0" Padding="15,10"/>
+        <StackPanel Grid.Row="0" Orientation="Horizontal"
+            Background="#2C3E50" Margin="0,0,0,0">
+            <Button Content="Stanice" Name="BtnStations"
+            Click="BtnStations_Click"
+            Foreground="White" Background="Transparent"
+            BorderThickness="0" Padding="15,10"/>
+            <Button Content="Mjerenja" Name="BtnReadings"
+            Click="BtnReadings_Click"
+            Foreground="White" Background="Transparent"
+            BorderThickness="0" Padding="15,10"/>
+            <Button Content="Grafikoni" Name="BtnCharts"
+            Click="BtnCharts_Click"
+            Foreground="White" Background="Transparent"
+            BorderThickness="0" Padding="15,10"/>
+            <Button Content="Sačuvaj" Name="BtnSave"
+            Click="BtnSave_Click"
+            Foreground="White" Background="Transparent"
+            BorderThickness="0" Padding="15,10"/>
+            <Button Content="Učitaj" Name="BtnLoad"
+            Click="BtnLoad_Click"
+            Foreground="White" Background="Transparent"
+            BorderThickness="0" Padding="15,10"/>
         </StackPanel>
 
-        <!-- Sadržaj -->
         <ContentControl Grid.Row="1" Name="MainContent"/>
     </Grid>
 </Window>

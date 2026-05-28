@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Component1\App.xaml
-5-1747328279
+8-1987200262
 
-24-1497409355
-141454810860
-MainWindow.xaml;Views\AddReadingDialog.xaml;Views\AddStationDialog.xaml;Views\ReadingView.xaml;Views\StationView.xaml;
+311390226687
+351148440017
+MainWindow.xaml;Views\AddReadingDialog.xaml;Views\AddStationDialog.xaml;Views\ChartView.xaml;Views\EditReadingDialog.xaml;Views\EditStationDialog.xaml;Views\ReadingView.xaml;Views\StationView.xaml;
 
 True
 

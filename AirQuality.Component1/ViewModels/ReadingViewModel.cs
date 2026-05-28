@@ -1,115 +1,128 @@
 ﻿using AirQuality.Common.Models;
+using AirQuality.Component1.Commands;
 using AirQuality.Component1.Helpers;
 using AirQuality.Component1.Services;
-using AirQuality.Component1.Views;
-using System;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Windows.Input;
 
 namespace AirQuality.Component1.ViewModels
 {
     public class ReadingViewModel : BaseViewModel
     {
-        private readonly DataService dataService;
-        private readonly LogService logService;
+        private readonly DataService _dataService;
+        private readonly LogService _logService;
+        private readonly UndoRedoManager _undoRedoManager;
 
-        private ObservableCollection<AirQualityReading> readings;
-        private AirQualityReading selectedReading;
-        private string searchText;
+        private ObservableCollection<AirQualityReading> _readings;
+        private AirQualityReading _selectedReading;
+        private string _searchText;
+        public ICommand EditCommand { get; }
 
         public ObservableCollection<AirQualityReading> Readings
         {
-            get => readings;
-            set { readings = value; OnPropertyChanged(); }
+            get => _readings;
+            set { _readings = value; OnPropertyChanged(); }
         }
 
         public AirQualityReading SelectedReading
         {
-            get => selectedReading;
-            set { selectedReading = value; OnPropertyChanged(); }
+            get => _selectedReading;
+            set { _selectedReading = value; OnPropertyChanged(); }
         }
 
         public string SearchText
         {
-            get => searchText;
-            set { searchText = value; OnPropertyChanged(); Search(); }
+            get => _searchText;
+            set { _searchText = value; OnPropertyChanged(); Search(); }
         }
 
         public ICommand AddCommand { get; }
-        public ICommand EditCommand { get; }
         public ICommand DeleteCommand { get; }
+        public ICommand UndoCommand { get; }
+        public ICommand RedoCommand { get; }
 
         public ReadingViewModel()
         {
-            dataService = DataService.Instance;
-            logService = new LogService();
+            _dataService = DataService.Instance;
+            _logService = new LogService();
+            _undoRedoManager = new UndoRedoManager();
 
-            Readings = new ObservableCollection<AirQualityReading>(dataService.Readings);
+            Readings = new ObservableCollection<AirQualityReading>(_dataService.Readings);
 
             AddCommand = new RelayCommand(AddReading);
-            EditCommand = new RelayCommand(EditReading, _ => SelectedReading != null);
             DeleteCommand = new RelayCommand(DeleteReading, _ => SelectedReading != null);
+            UndoCommand = new RelayCommand(_ => Undo(), _ => _undoRedoManager.CanUndo);
+            RedoCommand = new RelayCommand(_ => Redo(), _ => _undoRedoManager.CanRedo);
+            EditCommand = new RelayCommand(EditReading, _ => SelectedReading != null);
         }
 
         private void AddReading(object parameter)
         {
-            var dialog = new AddReadingDialog(dataService.Stations);
+            var dialog = new Views.AddReadingDialog();
             if (dialog.ShowDialog() == true)
             {
-                dataService.Readings.Add(dialog.Result);
-                Readings.Add(dialog.Result);
-                SelectedReading = dialog.Result;
-                logService.Log($"Dodano mjerenje za stanicu: {dialog.Result.StationId}, PM2.5: {dialog.Result.PM25}, Stanje: {dialog.Result.State}");
-            }
-        }
-
-        private void EditReading(object parameter)
-        {
-            if (SelectedReading == null) return;
-
-            var dialog = new AddReadingDialog(dataService.Stations, SelectedReading);
-            if (dialog.ShowDialog() == true)
-            {
-                SelectedReading.StationId = dialog.Result.StationId;
-                SelectedReading.PM25 = dialog.Result.PM25;
-                SelectedReading.NO2Level = dialog.Result.NO2Level;
-                SelectedReading.OzoneLevel = dialog.Result.OzoneLevel;
-                SelectedReading.State = dialog.Result.State;
-
-                logService.Log($"Izmijenjeno mjerenje za stanicu: {SelectedReading.StationId}, Stanje: {SelectedReading.State}");
-
-                var index = Readings.IndexOf(SelectedReading);
-                Readings.RemoveAt(index);
-                Readings.Insert(index, SelectedReading);
+                var newReading = dialog.NewReading;
+                var command = new AddReadingCommand(newReading, _dataService.Readings, Readings);
+                _undoRedoManager.ExecuteCommand(command);
+                _logService.Log($"Dodano mjerenje za stanicu: {newReading.StationId}, stanje: {newReading.State}");
             }
         }
 
         private void DeleteReading(object parameter)
         {
             if (SelectedReading == null) return;
-            logService.Log($"Obrisano mjerenje za stanicu: {SelectedReading.StationId}");
-            dataService.Readings.Remove(SelectedReading);
-            Readings.Remove(SelectedReading);
+
+            var command = new DeleteReadingCommand(SelectedReading, _dataService.Readings, Readings);
+            _logService.Log($"Obrisano mjerenje: StationId={SelectedReading.StationId}, stanje={SelectedReading.State}");
+            _undoRedoManager.ExecuteCommand(command);
             SelectedReading = null;
+        }
+
+        private void Undo()
+        {
+            _undoRedoManager.Undo();
+            _logService.Log("Undo akcija izvršena.");
+        }
+
+        private void Redo()
+        {
+            _undoRedoManager.Redo();
+            _logService.Log("Redo akcija izvršena.");
         }
 
         private void Search()
         {
             if (string.IsNullOrWhiteSpace(SearchText))
             {
-                Readings = new ObservableCollection<AirQualityReading>(dataService.Readings);
+                Readings = new ObservableCollection<AirQualityReading>(_dataService.Readings);
                 return;
             }
 
             var lower = SearchText.ToLower();
-            var filtered = dataService.Readings.Where(r =>
-                r.StationId.ToString().ToLower().Contains(lower) ||
+            var filtered = _dataService.Readings.FindAll(r =>
                 r.State.ToString().ToLower().Contains(lower) ||
-                r.PM25.ToString().Contains(lower) ||
-                r.NO2Level.ToString().Contains(lower));
+                r.StationId.ToString().ToLower().Contains(lower));
 
             Readings = new ObservableCollection<AirQualityReading>(filtered);
+        }
+
+        private void EditReading(object parameter)
+        {
+            if (SelectedReading == null) return;
+
+            var dialog = new Views.EditReadingDialog(SelectedReading);
+            if (dialog.ShowDialog() == true)
+            {
+                var command = new EditReadingCommand(
+                    SelectedReading,
+                    dialog.PM25,
+                    dialog.NO2Level,
+                    dialog.OzoneLevel,
+                    dialog.State);
+
+                _undoRedoManager.ExecuteCommand(command);
+                _logService.Log($"Izmijenjeno mjerenje: StationId={SelectedReading.StationId}, novo stanje={SelectedReading.State}");
+            }
         }
     }
 }

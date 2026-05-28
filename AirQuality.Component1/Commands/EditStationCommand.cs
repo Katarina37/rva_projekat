@@ -1,53 +1,51 @@
 ﻿using AirQuality.Common.Models;
 using AirQuality.Component1.Interfaces;
-using AirQuality.Component1.Services;
-using System.Collections.ObjectModel;
 
 namespace AirQuality.Component1.Commands
 {
     public class EditStationCommand : IUndoableCommand
     {
-        private readonly ObservableCollection<MonitoringStation> stations;
-        private readonly MonitoringStation station;
-        private readonly string oldName, oldCity, oldDistrict;
-        private readonly double oldLatitude, oldLongitude;
-        private readonly string newName, newCity, newDistrict;
-        private readonly double newLatitude, newLongitude;
+        private readonly MonitoringStation _station;
+        private readonly string _oldName, _oldCity, _oldDistrict;
+        private readonly double _oldLatitude, _oldLongitude;
+        private readonly string _newName, _newCity, _newDistrict;
+        private readonly double _newLatitude, _newLongitude;
 
-        public EditStationCommand(ObservableCollection<MonitoringStation> stations,
-            MonitoringStation station, MonitoringStation newValues)
+        public EditStationCommand(MonitoringStation station,
+            string newName, string newCity, string newDistrict,
+            double newLatitude, double newLongitude)
         {
-            this.stations = stations;
-            this.station = station;
+            _station = station;
 
-            oldName = station.Name;
-            oldCity = station.City;
-            oldDistrict = station.District;
-            oldLatitude = station.Latitude;
-            oldLongitude = station.Longitude;
+            _oldName = station.Name;
+            _oldCity = station.City;
+            _oldDistrict = station.District;
+            _oldLatitude = station.Latitude;
+            _oldLongitude = station.Longitude;
 
-            newName = newValues.Name;
-            newCity = newValues.City;
-            newDistrict = newValues.District;
-            newLatitude = newValues.Latitude;
-            newLongitude = newValues.Longitude;
+            _newName = newName;
+            _newCity = newCity;
+            _newDistrict = newDistrict;
+            _newLatitude = newLatitude;
+            _newLongitude = newLongitude;
         }
 
-        public void Execute() => ApplyValues(newName, newCity, newDistrict, newLatitude, newLongitude);
-
-        public void Undo() => ApplyValues(oldName, oldCity, oldDistrict, oldLatitude, oldLongitude);
-
-        private void ApplyValues(string name, string city, string district, double lat, double lon)
+        public void Execute()
         {
-            station.Name = name;
-            station.City = city;
-            station.District = district;
-            station.Latitude = lat;
-            station.Longitude = lon;
+            _station.Name = _newName;
+            _station.City = _newCity;
+            _station.District = _newDistrict;
+            _station.Latitude = _newLatitude;
+            _station.Longitude = _newLongitude;
+        }
 
-            var index = stations.IndexOf(station);
-            stations.RemoveAt(index);
-            stations.Insert(index, station);
+        public void Undo()
+        {
+            _station.Name = _oldName;
+            _station.City = _oldCity;
+            _station.District = _oldDistrict;
+            _station.Latitude = _oldLatitude;
+            _station.Longitude = _oldLongitude;
         }
     }
 }

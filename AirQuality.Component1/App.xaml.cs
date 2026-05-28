@@ -1,17 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AirQuality.Component1.Services;
+using System;
+using System.ServiceModel;
 using System.Windows;
 
 namespace AirQuality.Component1
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
     public partial class App : Application
     {
+        private ServiceHost _serviceHost;
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            StartWcfHost();
+        }
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            StopWcfHost();
+            base.OnExit(e);
+        }
+
+        private void StartWcfHost()
+        {
+            try
+            {
+                _serviceHost = new ServiceHost(typeof(MonitoringStationService));
+                _serviceHost.Open();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Greška pri pokretanju WCF servisa: {ex.Message}",
+                    "WCF greška", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void StopWcfHost()
+        {
+            if (_serviceHost != null && _serviceHost.State == CommunicationState.Opened)
+            {
+                _serviceHost.Close();
+            }
+        }
     }
 }
