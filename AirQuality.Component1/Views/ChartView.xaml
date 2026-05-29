@@ -3,15 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="clr-namespace:AirQuality.Component1.ViewModels"
              xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF">
-
     <UserControl.DataContext>
         <vm:ChartViewModel/>
     </UserControl.DataContext>
-
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="400"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
@@ -21,24 +19,23 @@
         <lvc:CartesianChart Grid.Row="1"
                             Series="{Binding Series}"
                             XAxes="{Binding XAxes}"
-                            MinHeight="300"/>
+                            Height="400"
+                            Width="700"
+                            HorizontalAlignment="Left"
+                            TooltipPosition="Hidden"/>
 
-        <!-- Legenda stanja -->
-        <StackPanel Grid.Row="2" Orientation="Horizontal" 
+        <StackPanel Grid.Row="2" Orientation="Horizontal"
                     HorizontalAlignment="Center" Margin="0,10,0,0">
-            <Border Background="#27AE60" Width="16" Height="16" 
+            <Border Background="#27AE60" Width="16" Height="16"
                     CornerRadius="3" Margin="5,0"/>
             <TextBlock Text="Good" VerticalAlignment="Center" Margin="3,0,15,0"/>
-
-            <Border Background="#F39C12" Width="16" Height="16" 
+            <Border Background="#F39C12" Width="16" Height="16"
                     CornerRadius="3" Margin="5,0"/>
             <TextBlock Text="Moderate" VerticalAlignment="Center" Margin="3,0,15,0"/>
-
-            <Border Background="#E74C3C" Width="16" Height="16" 
+            <Border Background="#E74C3C" Width="16" Height="16"
                     CornerRadius="3" Margin="5,0"/>
             <TextBlock Text="Unhealthy" VerticalAlignment="Center" Margin="3,0,15,0"/>
-
-            <Border Background="#8E44AD" Width="16" Height="16" 
+            <Border Background="#8E44AD" Width="16" Height="16"
                     CornerRadius="3" Margin="5,0"/>
             <TextBlock Text="Hazardous" VerticalAlignment="Center" Margin="3,0,15,0"/>
         </StackPanel>

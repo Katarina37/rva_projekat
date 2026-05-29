@@ -1,6 +1,16 @@
 C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Common\bin\Debug\AirQuality.Common.dll
 C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Common\bin\Debug\AirQuality.Common.pdb
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Common\bin\Debug\System.Buffers.dll
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Common\bin\Debug\System.Drawing.Common.dll
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Common\bin\Debug\System.Memory.dll
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Common\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Common\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Common\bin\Debug\System.Buffers.xml
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Common\bin\Debug\System.Memory.xml
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Common\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Common\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Common\obj\Debug\AirQuality.Common.csproj.AssemblyReference.cache
 C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Common\obj\Debug\AirQuality.Common.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Common\obj\Debug\AirQuali.3502A920.Up2Date
 C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Common\obj\Debug\AirQuality.Common.dll
 C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Common\obj\Debug\AirQuality.Common.pdb

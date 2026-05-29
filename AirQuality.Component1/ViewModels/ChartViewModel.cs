@@ -1,5 +1,4 @@
 ﻿using AirQuality.Common.Models;
-using AirQuality.Component1.Helpers;
 using AirQuality.Component1.Services;
 using LiveChartsCore;
 using LiveChartsCore.SkiaSharpView;
@@ -22,22 +21,29 @@ namespace AirQuality.Component1.ViewModels
             set { _series = value; OnPropertyChanged(); }
         }
 
-        public List<Axis> XAxes { get; set; }
+        private List<Axis> _xAxes;
+        public List<Axis> XAxes
+        {
+            get => _xAxes;
+            set { _xAxes = value; OnPropertyChanged(); }
+        }
 
         public ChartViewModel()
         {
             _dataService = DataService.Instance;
-            _simulatorService = new StateSimulatorService(UpdateChart);
 
             XAxes = new List<Axis>
             {
                 new Axis
                 {
-                    Labels = new List<string> { "Good", "Moderate", "Unhealthy", "Hazardous" }
+                    Labels = new List<string> { "Good", "Moderate", "Unhealthy", "Hazardous" },
+                    TextSize = 14
                 }
             };
 
             UpdateChart();
+
+            _simulatorService = new StateSimulatorService(UpdateChart);
             _simulatorService.Start();
         }
 
@@ -45,7 +51,7 @@ namespace AirQuality.Component1.ViewModels
         {
             var readings = _dataService.Readings;
 
-            var counts = new[]
+            var counts = new double[]
             {
                 readings.Count(r => r.State == AirQualityState.Good),
                 readings.Count(r => r.State == AirQualityState.Moderate),
@@ -55,11 +61,13 @@ namespace AirQuality.Component1.ViewModels
 
             Series = new ISeries[]
             {
-                new ColumnSeries<int>
+                new ColumnSeries<double>
                 {
                     Name = "Broj mjerenja",
                     Values = counts,
-                    Fill = new SolidColorPaint(SKColor.Parse("#2C3E50"))
+                    Fill = new SolidColorPaint(SKColor.Parse("#27AE60")),
+                    Stroke = null,
+                    MaxBarWidth = 60
                 }
             };
         }

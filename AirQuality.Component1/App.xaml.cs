@@ -2,6 +2,8 @@
 using System;
 using System.ServiceModel;
 using System.Windows;
+using LiveChartsCore;
+using LiveChartsCore.SkiaSharpView;
 
 namespace AirQuality.Component1
 {
@@ -12,6 +14,10 @@ namespace AirQuality.Component1
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
+            LiveCharts.Configure(config => config
+             .AddSkiaSharp()
+             .AddDefaultMappers()
+             .AddLightTheme());
             StartWcfHost();
         }
 

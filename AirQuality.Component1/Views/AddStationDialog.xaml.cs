@@ -1,4 +1,5 @@
 ﻿using AirQuality.Common.Models;
+using System.Globalization;
 using System.Windows;
 
 namespace AirQuality.Component1.Views
@@ -17,8 +18,8 @@ namespace AirQuality.Component1.Views
             TxtName.Text = existing.Name;
             TxtCity.Text = existing.City;
             TxtDistrict.Text = existing.District;
-            TxtLatitude.Text = existing.Latitude.ToString();
-            TxtLongitude.Text = existing.Longitude.ToString();
+            TxtLatitude.Text = existing.Latitude.ToString(CultureInfo.InvariantCulture);
+            TxtLongitude.Text = existing.Longitude.ToString(CultureInfo.InvariantCulture);
         }
 
         private void BtnConfirm_Click(object sender, RoutedEventArgs e)
@@ -30,8 +31,8 @@ namespace AirQuality.Component1.Views
                 Name = TxtName.Text.Trim(),
                 City = TxtCity.Text.Trim(),
                 District = TxtDistrict.Text.Trim(),
-                Latitude = double.Parse(TxtLatitude.Text.Trim()),
-                Longitude = double.Parse(TxtLongitude.Text.Trim())
+                Latitude = double.Parse(TxtLatitude.Text.Trim(), CultureInfo.InvariantCulture),
+                Longitude = double.Parse(TxtLongitude.Text.Trim(), CultureInfo.InvariantCulture)
             };
 
             DialogResult = true;
@@ -61,12 +62,12 @@ namespace AirQuality.Component1.Views
                 TxtError.Text = "Četvrt je obavezna.";
                 return false;
             }
-            if (!double.TryParse(TxtLatitude.Text, out double lat) || lat < -90 || lat > 90)
+            if (!double.TryParse(TxtLatitude.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out double lat) || lat < -90 || lat > 90)
             {
                 TxtError.Text = "Geografska širina mora biti broj između -90 i 90.";
                 return false;
             }
-            if (!double.TryParse(TxtLongitude.Text, out double lon) || lon < -180 || lon > 180)
+            if (!double.TryParse(TxtLongitude.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out double lon) || lon < -180 || lon > 180)
             {
                 TxtError.Text = "Geografska dužina mora biti broj između -180 i 180.";
                 return false;
