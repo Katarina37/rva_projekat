@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "AirQuality.Component1\\AirQuality.Component1.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "AirQuality.Component2\\AirQuality.Component2.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

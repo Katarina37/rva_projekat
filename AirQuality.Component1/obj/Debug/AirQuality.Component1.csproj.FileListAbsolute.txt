@@ -147,7 +147,6 @@ C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\AirQuality
 C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\AirQuali.95A8D0AA.Up2Date
 C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\AirQuality.Component1.exe
 C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\AirQuality.Component1.pdb
-C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\AirQuality.Component1.exe.config
 C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\bin\Debug\libSkiaSharp.dylib
 C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\bin\Debug\x86\libSkiaSharp.dll
 C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\bin\Debug\x64\libSkiaSharp.dll
