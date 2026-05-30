@@ -1,9 +1,9 @@
-﻿using AirQuality.Common.Models;
-using AirQuality.Component1.Interfaces;
+using AirQuality.Common.Models;
+using AirQuality.Component1.Services;
 
 namespace AirQuality.Component1.Commands
 {
-    public class EditReadingCommand : IUndoableCommand
+    public class EditReadingCommand : ReadingCommand
     {
         private readonly AirQualityReading _reading;
 
@@ -14,8 +14,10 @@ namespace AirQuality.Component1.Commands
         private readonly AirQualityState _newState;
 
         public EditReadingCommand(AirQualityReading reading,
+            AirQualityReadingService receiver,
             double newPM25, double newNO2Level, double newOzoneLevel,
             AirQualityState newState)
+            : base(receiver)
         {
             _reading = reading;
 
@@ -30,20 +32,14 @@ namespace AirQuality.Component1.Commands
             _newState = newState;
         }
 
-        public void Execute()
+        public override void Execute()
         {
-            _reading.PM25 = _newPM25;
-            _reading.NO2Level = _newNO2Level;
-            _reading.OzoneLevel = _newOzoneLevel;
-            _reading.State = _newState;
+            Receiver.EditReading(_reading, _newPM25, _newNO2Level, _newOzoneLevel, _newState);
         }
 
-        public void Undo()
+        public override void Undo()
         {
-            _reading.PM25 = _oldPM25;
-            _reading.NO2Level = _oldNO2Level;
-            _reading.OzoneLevel = _oldOzoneLevel;
-            _reading.State = _oldState;
+            Receiver.EditReading(_reading, _oldPM25, _oldNO2Level, _oldOzoneLevel, _oldState);
         }
     }
 }

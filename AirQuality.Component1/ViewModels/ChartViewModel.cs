@@ -1,18 +1,20 @@
-﻿using AirQuality.Common.Models;
+using AirQuality.Common.Models;
+using AirQuality.Component1.Interfaces;
 using AirQuality.Component1.Services;
 using LiveChartsCore;
 using LiveChartsCore.SkiaSharpView;
 using LiveChartsCore.SkiaSharpView.Painting;
 using SkiaSharp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace AirQuality.Component1.ViewModels
 {
-    public class ChartViewModel : BaseViewModel
+    public class ChartViewModel : BaseViewModel, IReadingObserver, IDisposable
     {
-        private readonly DataService _dataService;
-        private readonly StateSimulatorService _simulatorService;
+        private readonly AirQualityReadingService _readingService;
+        private bool _disposed;
 
         private ISeries[] _series;
         public ISeries[] Series
@@ -28,9 +30,16 @@ namespace AirQuality.Component1.ViewModels
             set { _xAxes = value; OnPropertyChanged(); }
         }
 
+        private List<Axis> _yAxes;
+        public List<Axis> YAxes
+        {
+            get => _yAxes;
+            set { _yAxes = value; OnPropertyChanged(); }
+        }
+
         public ChartViewModel()
         {
-            _dataService = DataService.Instance;
+            _readingService = AirQualityReadingService.Instance;
 
             XAxes = new List<Axis>
             {
@@ -41,15 +50,38 @@ namespace AirQuality.Component1.ViewModels
                 }
             };
 
-            UpdateChart();
+            YAxes = new List<Axis>
+            {
+                new Axis
+                {
+                    MinLimit = 0,
+                    MinStep = 1,
+                    TextSize = 14
+                }
+            };
 
-            _simulatorService = new StateSimulatorService(UpdateChart);
-            _simulatorService.Start();
+            _readingService.Attach(this);
+            Update();
+            StateSimulatorService.Instance.Start();
+        }
+
+        public void Update()
+        {
+            UpdateChart();
+        }
+
+        public void Dispose()
+        {
+            if (_disposed) return;
+
+            _readingService.Detach(this);
+            StateSimulatorService.Instance.Stop();
+            _disposed = true;
         }
 
         private void UpdateChart()
         {
-            var readings = _dataService.Readings;
+            var readings = _readingService.GetReadings();
 
             var counts = new double[]
             {
@@ -61,15 +93,30 @@ namespace AirQuality.Component1.ViewModels
 
             Series = new ISeries[]
             {
-                new ColumnSeries<double>
-                {
-                    Name = "Broj mjerenja",
-                    Values = counts,
-                    Fill = new SolidColorPaint(SKColor.Parse("#27AE60")),
-                    Stroke = null,
-                    MaxBarWidth = 60
-                }
+                CreateStateSeries("Good", counts[0], 0, "#27AE60"),
+                CreateStateSeries("Moderate", counts[1], 1, "#F39C12"),
+                CreateStateSeries("Unhealthy", counts[2], 2, "#E74C3C"),
+                CreateStateSeries("Hazardous", counts[3], 3, "#8E44AD")
             };
+        }
+
+        private static ISeries CreateStateSeries(string name, double count, int stateIndex, string color)
+        {
+            return new StackedColumnSeries<double>
+            {
+                Name = name,
+                Values = CreateValues(count, stateIndex),
+                Fill = new SolidColorPaint(SKColor.Parse(color)),
+                Stroke = null,
+                MaxBarWidth = 60
+            };
+        }
+
+        private static double[] CreateValues(double count, int stateIndex)
+        {
+            var values = new double[4];
+            values[stateIndex] = count;
+            return values;
         }
     }
 }

@@ -1,9 +1,9 @@
-﻿using AirQuality.Common.Models;
-using AirQuality.Component1.Interfaces;
+using AirQuality.Common.Models;
+using AirQuality.Component1.Services;
 
 namespace AirQuality.Component1.Commands
 {
-    public class EditStationCommand : IUndoableCommand
+    public class EditStationCommand : StationCommand
     {
         private readonly MonitoringStation _station;
         private readonly string _oldName, _oldCity, _oldDistrict;
@@ -12,8 +12,10 @@ namespace AirQuality.Component1.Commands
         private readonly double _newLatitude, _newLongitude;
 
         public EditStationCommand(MonitoringStation station,
+            MonitoringStationManagementService receiver,
             string newName, string newCity, string newDistrict,
             double newLatitude, double newLongitude)
+            : base(receiver)
         {
             _station = station;
 
@@ -30,22 +32,14 @@ namespace AirQuality.Component1.Commands
             _newLongitude = newLongitude;
         }
 
-        public void Execute()
+        public override void Execute()
         {
-            _station.Name = _newName;
-            _station.City = _newCity;
-            _station.District = _newDistrict;
-            _station.Latitude = _newLatitude;
-            _station.Longitude = _newLongitude;
+            Receiver.EditStation(_station, _newName, _newCity, _newDistrict, _newLatitude, _newLongitude);
         }
 
-        public void Undo()
+        public override void Undo()
         {
-            _station.Name = _oldName;
-            _station.City = _oldCity;
-            _station.District = _oldDistrict;
-            _station.Latitude = _oldLatitude;
-            _station.Longitude = _oldLongitude;
+            Receiver.EditStation(_station, _oldName, _oldCity, _oldDistrict, _oldLatitude, _oldLongitude);
         }
     }
 }

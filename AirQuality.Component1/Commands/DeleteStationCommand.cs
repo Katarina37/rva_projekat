@@ -1,35 +1,26 @@
-﻿using AirQuality.Common.Models;
-using AirQuality.Component1.Interfaces;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using AirQuality.Common.Models;
+using AirQuality.Component1.Services;
 
 namespace AirQuality.Component1.Commands
 {
-    public class DeleteStationCommand : IUndoableCommand
+    public class DeleteStationCommand : StationCommand
     {
         private readonly MonitoringStation _station;
-        private readonly List<MonitoringStation> _dataList;
-        private readonly ObservableCollection<MonitoringStation> _observableList;
 
-        public DeleteStationCommand(MonitoringStation station,
-            List<MonitoringStation> dataList,
-            ObservableCollection<MonitoringStation> observableList)
+        public DeleteStationCommand(MonitoringStation station, MonitoringStationManagementService receiver)
+            : base(receiver)
         {
             _station = station;
-            _dataList = dataList;
-            _observableList = observableList;
         }
 
-        public void Execute()
+        public override void Execute()
         {
-            _dataList.Remove(_station);
-            _observableList.Remove(_station);
+            Receiver.DeleteStation(_station);
         }
 
-        public void Undo()
+        public override void Undo()
         {
-            _dataList.Add(_station);
-            _observableList.Add(_station);
+            Receiver.AddStation(_station);
         }
     }
 }

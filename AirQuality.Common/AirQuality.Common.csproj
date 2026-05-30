@@ -66,7 +66,13 @@
     <Compile Include="Interfaces\IMonitoringStationService.cs" />
     <Compile Include="Models\AirQualityReading.cs" />
     <Compile Include="Models\AirQualityState.cs" />
+    <Compile Include="Models\AirQualityStateFactory.cs" />
+    <Compile Include="Models\GoodState.cs" />
+    <Compile Include="Models\HazardousState.cs" />
+    <Compile Include="Models\IAirQualityState.cs" />
+    <Compile Include="Models\ModerateState.cs" />
     <Compile Include="Models\MonitoringStation.cs" />
+    <Compile Include="Models\UnhealthyState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

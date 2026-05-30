@@ -19,6 +19,7 @@
         <lvc:CartesianChart Grid.Row="1"
                             Series="{Binding Series}"
                             XAxes="{Binding XAxes}"
+                            YAxes="{Binding YAxes}"
                             Height="400"
                             Width="700"
                             HorizontalAlignment="Left"

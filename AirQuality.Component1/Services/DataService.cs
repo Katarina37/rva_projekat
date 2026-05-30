@@ -36,6 +36,7 @@ namespace AirQuality.Component1.Services
             {
                 Stations = stations;
                 Readings = readings ?? new List<AirQualityReading>();
+                RestoreReadingStateObjects();
             }
             else
             {
@@ -79,6 +80,16 @@ namespace AirQuality.Component1.Services
                 new AirQualityReading { StationId = station2.Id, PM25 = 12.0, NO2Level = 31.5, OzoneLevel = 25.0, State = AirQualityState.Good },
                 new AirQualityReading { StationId = station3.Id, PM25 = 80.0, NO2Level = 120.0, OzoneLevel = 90.0, State = AirQualityState.Hazardous }
             });
+
+            RestoreReadingStateObjects();
+        }
+
+        private void RestoreReadingStateObjects()
+        {
+            foreach (var reading in Readings)
+            {
+                reading.RestoreStateObjectFromEnum();
+            }
         }
     }
 }

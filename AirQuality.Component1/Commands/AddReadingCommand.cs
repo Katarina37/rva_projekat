@@ -1,35 +1,26 @@
-﻿using AirQuality.Common.Models;
-using AirQuality.Component1.Interfaces;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using AirQuality.Common.Models;
+using AirQuality.Component1.Services;
 
 namespace AirQuality.Component1.Commands
 {
-    public class AddReadingCommand : IUndoableCommand
+    public class AddReadingCommand : ReadingCommand
     {
         private readonly AirQualityReading _reading;
-        private readonly List<AirQualityReading> _dataList;
-        private readonly ObservableCollection<AirQualityReading> _observableList;
 
-        public AddReadingCommand(AirQualityReading reading,
-            List<AirQualityReading> dataList,
-            ObservableCollection<AirQualityReading> observableList)
+        public AddReadingCommand(AirQualityReading reading, AirQualityReadingService receiver)
+            : base(receiver)
         {
             _reading = reading;
-            _dataList = dataList;
-            _observableList = observableList;
         }
 
-        public void Execute()
+        public override void Execute()
         {
-            _dataList.Add(_reading);
-            _observableList.Add(_reading);
+            Receiver.AddReading(_reading);
         }
 
-        public void Undo()
+        public override void Undo()
         {
-            _dataList.Remove(_reading);
-            _observableList.Remove(_reading);
+            Receiver.DeleteReading(_reading);
         }
     }
 }

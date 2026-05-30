@@ -54,6 +54,11 @@ namespace AirQuality.Component1.Views
                 TxtError.Text = "Grad ne smije biti prazan.";
                 return false;
             }
+            if (string.IsNullOrWhiteSpace(TxtDistrict.Text))
+            {
+                TxtError.Text = "Četvrt ne smije biti prazna.";
+                return false;
+            }
             if (!double.TryParse(TxtLatitude.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out double lat) || lat < -90 || lat > 90)
             {
                 TxtError.Text = "Geografska širina mora biti broj između -90 i 90.";

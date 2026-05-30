@@ -1,15 +1,17 @@
-﻿using AirQuality.Common.Models;
+using AirQuality.Common.Models;
 using AirQuality.Component1.Commands;
 using AirQuality.Component1.Helpers;
+using AirQuality.Component1.Interfaces;
 using AirQuality.Component1.Services;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.Windows.Input;
 
 namespace AirQuality.Component1.ViewModels
 {
     public class ReadingViewModel : BaseViewModel
     {
-        private readonly DataService _dataService;
+        private readonly AirQualityReadingService _readingService;
         private readonly LogService _logService;
         private readonly UndoRedoManager _undoRedoManager;
 
@@ -43,11 +45,11 @@ namespace AirQuality.Component1.ViewModels
 
         public ReadingViewModel()
         {
-            _dataService = DataService.Instance;
+            _readingService = AirQualityReadingService.Instance;
             _logService = new LogService();
             _undoRedoManager = new UndoRedoManager();
 
-            Readings = new ObservableCollection<AirQualityReading>(_dataService.Readings);
+            Readings = new ObservableCollection<AirQualityReading>(_readingService.GetReadings());
 
             AddCommand = new RelayCommand(AddReading);
             DeleteCommand = new RelayCommand(DeleteReading, _ => SelectedReading != null);
@@ -62,9 +64,14 @@ namespace AirQuality.Component1.ViewModels
             if (dialog.ShowDialog() == true)
             {
                 var newReading = dialog.NewReading;
-                var command = new AddReadingCommand(newReading, _dataService.Readings, Readings);
-                _undoRedoManager.ExecuteCommand(command);
-                _logService.Log($"Dodano mjerenje za stanicu: {newReading.StationId}, stanje: {newReading.State}");
+                var command = new AddReadingCommand(newReading, _readingService);
+                var loggedCommand = CreateLoggedCommand(
+                    command,
+                    $"Dodano mjerenje za stanicu: {newReading.StationId}, stanje: {newReading.State}",
+                    $"Poništeno dodavanje mjerenja za stanicu: {newReading.StationId}");
+
+                _undoRedoManager.ExecuteCommand(loggedCommand);
+                RefreshReadings();
             }
         }
 
@@ -72,57 +79,94 @@ namespace AirQuality.Component1.ViewModels
         {
             if (SelectedReading == null) return;
 
-            var command = new DeleteReadingCommand(SelectedReading, _dataService.Readings, Readings);
-            _logService.Log($"Obrisano mjerenje: StationId={SelectedReading.StationId}, stanje={SelectedReading.State}");
-            _undoRedoManager.ExecuteCommand(command);
+            var reading = SelectedReading;
+            var command = new DeleteReadingCommand(reading, _readingService);
+            var loggedCommand = CreateLoggedCommand(
+                command,
+                $"Obrisano mjerenje: StationId={reading.StationId}, stanje={reading.State}",
+                $"Poništeno brisanje mjerenja: StationId={reading.StationId}");
+
+            _undoRedoManager.ExecuteCommand(loggedCommand);
             SelectedReading = null;
+            RefreshReadings();
         }
 
         private void Undo()
         {
             _undoRedoManager.Undo();
-            _logService.Log("Undo akcija izvršena.");
+            RefreshReadings();
         }
 
         private void Redo()
         {
             _undoRedoManager.Redo();
-            _logService.Log("Redo akcija izvršena.");
+            RefreshReadings();
         }
 
         private void Search()
         {
+            RefreshReadings();
+        }
+
+        private void RefreshReadings()
+        {
             if (string.IsNullOrWhiteSpace(SearchText))
             {
-                Readings = new ObservableCollection<AirQualityReading>(_dataService.Readings);
+                Readings = new ObservableCollection<AirQualityReading>(_readingService.GetReadings());
                 return;
             }
 
             var lower = SearchText.ToLower();
-            var filtered = _dataService.Readings.FindAll(r =>
-                r.State.ToString().ToLower().Contains(lower) ||
-                r.StationId.ToString().ToLower().Contains(lower));
-
+            var filtered = _readingService.GetReadings().FindAll(r => MatchesReading(r, lower));
             Readings = new ObservableCollection<AirQualityReading>(filtered);
+        }
+
+        private bool MatchesReading(AirQualityReading reading, string lower)
+        {
+            return Contains(reading.StationId.ToString(), lower) ||
+                   Contains(reading.ReadingTime.ToString(CultureInfo.CurrentCulture), lower) ||
+                   Contains(reading.ReadingTime.ToString("dd.MM.yyyy HH:mm", CultureInfo.InvariantCulture), lower) ||
+                   Contains(reading.PM25.ToString(CultureInfo.InvariantCulture), lower) ||
+                   Contains(reading.NO2Level.ToString(CultureInfo.InvariantCulture), lower) ||
+                   Contains(reading.OzoneLevel.ToString(CultureInfo.InvariantCulture), lower) ||
+                   Contains(reading.State.ToString(), lower);
+        }
+
+        private bool Contains(string value, string lower)
+        {
+            return value != null && value.ToLower().Contains(lower);
         }
 
         private void EditReading(object parameter)
         {
             if (SelectedReading == null) return;
 
-            var dialog = new Views.EditReadingDialog(SelectedReading);
+            var reading = SelectedReading;
+            var oldState = reading.State;
+            var dialog = new Views.EditReadingDialog(reading);
             if (dialog.ShowDialog() == true)
             {
                 var command = new EditReadingCommand(
-                    SelectedReading,
+                    reading,
+                    _readingService,
                     dialog.PM25,
                     dialog.NO2Level,
                     dialog.OzoneLevel,
                     dialog.State);
 
-                _undoRedoManager.ExecuteCommand(command);
-                _logService.Log($"Izmijenjeno mjerenje: StationId={SelectedReading.StationId}, novo stanje={SelectedReading.State}");
+                var loggedCommand = CreateLoggedCommand(
+                    command,
+                    $"Izmijenjeno mjerenje: StationId={reading.StationId}, novo stanje={dialog.State}",
+                    $"Poništena izmjena mjerenja: StationId={reading.StationId}, vraćeno stanje={oldState}");
+
+                _undoRedoManager.ExecuteCommand(loggedCommand);
+                RefreshReadings();
             }
+        }
+
+        private IUndoableCommand CreateLoggedCommand(IUndoableCommand command, string executeMessage, string undoMessage)
+        {
+            return new LoggingCommandDecorator(command, _logService, executeMessage, undoMessage);
         }
     }
 }

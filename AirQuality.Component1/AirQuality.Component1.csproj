@@ -118,14 +118,23 @@
     </ApplicationDefinition>
     <Compile Include="Commands\AddReadingCommand.cs" />
     <Compile Include="Commands\AddStationCommand.cs" />
+    <Compile Include="Commands\ChangeReadingStateCommand.cs" />
+    <Compile Include="Commands\CommandDecorator.cs" />
     <Compile Include="Commands\DeleteReadingCommand.cs" />
     <Compile Include="Commands\DeleteStationCommand.cs" />
     <Compile Include="Commands\EditReadingCommand.cs" />
     <Compile Include="Commands\EditStationCommand.cs" />
+    <Compile Include="Commands\LoggingCommandDecorator.cs" />
+    <Compile Include="Commands\ReadingCommand.cs" />
+    <Compile Include="Commands\StationCommand.cs" />
     <Compile Include="Helpers\UndoRedoManager.cs" />
+    <Compile Include="Interfaces\IReadingObserver.cs" />
+    <Compile Include="Interfaces\IReadingSubject.cs" />
     <Compile Include="Interfaces\IUndoableCommand.cs" />
+    <Compile Include="Services\AirQualityReadingService.cs" />
     <Compile Include="Services\DataService.cs" />
     <Compile Include="Services\LogService.cs" />
+    <Compile Include="Services\MonitoringStationManagementService.cs" />
     <Compile Include="Services\MonitoringStationService.cs" />
     <Compile Include="Services\PersistenceService.cs" />
     <Compile Include="Services\StateSimulatorService.cs" />

@@ -12,6 +12,7 @@ namespace AirQuality.Common.Models
         private double _no2Level;
         private double _ozoneLevel;
         private AirQualityState _state;
+        private IAirQualityState _currentState;
 
         [DataMember]
         public Guid StationId { get; set; }
@@ -44,12 +45,48 @@ namespace AirQuality.Common.Models
         public AirQualityState State
         {
             get => _state;
-            set { _state = value; OnPropertyChanged(); }
+            set
+            {
+                _state = value;
+                _currentState = AirQualityStateFactory.Create(value);
+                OnPropertyChanged();
+            }
         }
 
         public AirQualityReading()
         {
             ReadingTime = DateTime.Now;
+            RestoreStateObjectFromEnum();
+        }
+
+        public void SetStateObject(IAirQualityState state)
+        {
+            if (state == null) return;
+
+            _currentState = state;
+            _state = state.GetStateValue();
+            OnPropertyChanged(nameof(State));
+        }
+
+        public void ChangeToNextState()
+        {
+            if (_currentState == null)
+            {
+                RestoreStateObjectFromEnum();
+            }
+
+            _currentState.Handle(this);
+        }
+
+        public void RestoreStateObjectFromEnum()
+        {
+            _currentState = AirQualityStateFactory.Create(State);
+        }
+
+        [OnDeserialized]
+        private void OnDeserialized(StreamingContext context)
+        {
+            RestoreStateObjectFromEnum();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

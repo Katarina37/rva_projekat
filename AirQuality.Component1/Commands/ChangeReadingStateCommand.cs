@@ -3,24 +3,26 @@ using AirQuality.Component1.Services;
 
 namespace AirQuality.Component1.Commands
 {
-    public class DeleteReadingCommand : ReadingCommand
+    public class ChangeReadingStateCommand : ReadingCommand
     {
         private readonly AirQualityReading _reading;
+        private readonly AirQualityState _oldState;
 
-        public DeleteReadingCommand(AirQualityReading reading, AirQualityReadingService receiver)
+        public ChangeReadingStateCommand(AirQualityReading reading, AirQualityReadingService receiver)
             : base(receiver)
         {
             _reading = reading;
+            _oldState = reading.State;
         }
 
         public override void Execute()
         {
-            Receiver.DeleteReading(_reading);
+            Receiver.ChangeReadingState(_reading);
         }
 
         public override void Undo()
         {
-            Receiver.AddReading(_reading);
+            Receiver.SetReadingState(_reading, _oldState);
         }
     }
 }

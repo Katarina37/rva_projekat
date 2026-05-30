@@ -1,44 +1,50 @@
-﻿using AirQuality.Common.Models;
-using AirQuality.Component1.Services;
 using System;
-using System.Threading;
+using System.Linq;
 using System.Windows.Threading;
 
 namespace AirQuality.Component1.Services
 {
     public class StateSimulatorService
     {
-        private readonly DataService _dataService;
-        private readonly DispatcherTimer _timer;
-        private readonly Action _onStateChanged;
+        private static StateSimulatorService _instance;
+        public static StateSimulatorService Instance => _instance ?? (_instance = new StateSimulatorService());
 
-        public StateSimulatorService(Action onStateChanged)
+        private readonly AirQualityReadingService _readingService;
+        private readonly DispatcherTimer _timer;
+
+        private StateSimulatorService()
         {
-            _dataService = DataService.Instance;
-            _onStateChanged = onStateChanged;
+            _readingService = AirQualityReadingService.Instance;
 
             _timer = new DispatcherTimer();
             _timer.Interval = TimeSpan.FromSeconds(3);
             _timer.Tick += OnTick;
         }
 
-        public void Start() => _timer.Start();
-        public void Stop() => _timer.Stop();
+        public void Start()
+        {
+            if (!_timer.IsEnabled)
+            {
+                _timer.Start();
+            }
+        }
+
+        public void Stop()
+        {
+            if (_timer.IsEnabled)
+            {
+                _timer.Stop();
+            }
+        }
 
         private void OnTick(object sender, EventArgs e)
         {
-            foreach (var reading in _dataService.Readings)
+            foreach (var reading in _readingService.GetReadings().ToList())
             {
-                reading.State = GetNextState(reading.State);
+                reading.ChangeToNextState();
             }
-            _onStateChanged?.Invoke();
-        }
 
-        private AirQualityState GetNextState(AirQualityState current)
-        {
-            var states = (AirQualityState[])Enum.GetValues(typeof(AirQualityState));
-            int nextIndex = ((int)current + 1) % states.Length;
-            return states[nextIndex];
+            _readingService.Notify();
         }
     }
 }
