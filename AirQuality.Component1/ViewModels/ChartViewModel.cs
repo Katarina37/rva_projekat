@@ -9,8 +9,16 @@ namespace AirQuality.Component1.ViewModels
 {
     public class ChartViewModel : BaseViewModel, IReadingObserver, IDisposable
     {
-        private static readonly string[] StateLabels = { "Good", "Moderate", "Unhealthy", "Hazardous" };
-        private static readonly string[] StateColors = { "#27AE60", "#F39C12", "#E74C3C", "#8E44AD" };
+        private static readonly string[] StateLabels =
+        {
+            AirQualityStateDisplay.ToSerbianText(AirQualityState.Good),
+            AirQualityStateDisplay.ToSerbianText(AirQualityState.Moderate),
+            AirQualityStateDisplay.ToSerbianText(AirQualityState.Unhealthy),
+            AirQualityStateDisplay.ToSerbianText(AirQualityState.Hazardous)
+        };
+        private static readonly string[] StateColors = { "#39D353", "#F4D03F", "#FF8C32", "#E53935" };
+        private static readonly string[] StateGradientStartColors = { "#1E9F3C", "#D4A900", "#D96611", "#B71C1C" };
+        private static readonly string[] StateGradientEndColors = { "#7CFF91", "#FFF176", "#FFB36C", "#FF7A73" };
         private const double MaxVisualBarWidth = 500;
 
         private readonly AirQualityReadingService _readingService;
@@ -69,10 +77,10 @@ namespace AirQuality.Component1.ViewModels
         {
             return new ObservableCollection<StateBarItem>
             {
-                new StateBarItem(StateLabels[0], StateColors[0]),
-                new StateBarItem(StateLabels[1], StateColors[1]),
-                new StateBarItem(StateLabels[2], StateColors[2]),
-                new StateBarItem(StateLabels[3], StateColors[3])
+                new StateBarItem(StateLabels[0], StateColors[0], StateGradientStartColors[0], StateGradientEndColors[0]),
+                new StateBarItem(StateLabels[1], StateColors[1], StateGradientStartColors[1], StateGradientEndColors[1]),
+                new StateBarItem(StateLabels[2], StateColors[2], StateGradientStartColors[2], StateGradientEndColors[2]),
+                new StateBarItem(StateLabels[3], StateColors[3], StateGradientStartColors[3], StateGradientEndColors[3])
             };
         }
 
@@ -93,15 +101,21 @@ namespace AirQuality.Component1.ViewModels
         private int _count;
         private double _barWidth;
 
-        public StateBarItem(string label, string color)
+        public StateBarItem(string label, string color, string gradientStartColor, string gradientEndColor)
         {
             Label = label;
             Color = color;
+            GradientStartColor = gradientStartColor;
+            GradientEndColor = gradientEndColor;
         }
 
         public string Label { get; }
 
         public string Color { get; }
+
+        public string GradientStartColor { get; }
+
+        public string GradientEndColor { get; }
 
         public int Count
         {

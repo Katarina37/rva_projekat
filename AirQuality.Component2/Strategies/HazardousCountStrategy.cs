@@ -7,7 +7,7 @@ namespace AirQuality.Component2.Strategies
 {
     public class HazardousCountStrategy : IStatisticsStrategy
     {
-        public string Name => "Hazardous Count";
+        public string Name => "Broj opasnih merenja";
 
         public StatisticsResult Calculate(Dictionary<string, List<AirQualityReading>> data)
         {
@@ -17,7 +17,7 @@ namespace AirQuality.Component2.Strategies
             return new StatisticsResult
             {
                 MethodName = Name,
-                Description = "Broj merenja sa stanjem Hazardous",
+                Description = "Broj merenja sa opasnim stanjem",
                 Value = value,
                 Unit = "merenja"
             };

@@ -50,8 +50,11 @@ namespace AirQuality.Common.Models
                 _state = value;
                 _currentState = AirQualityStateFactory.Create(value);
                 OnPropertyChanged();
+                OnPropertyChanged(nameof(StateDisplay));
             }
         }
+
+        public string StateDisplay => AirQualityStateDisplay.ToSerbianText(State);
 
         public AirQualityReading()
         {
@@ -66,6 +69,7 @@ namespace AirQuality.Common.Models
             _currentState = state;
             _state = state.GetStateValue();
             OnPropertyChanged(nameof(State));
+            OnPropertyChanged(nameof(StateDisplay));
         }
 
         public void ChangeToNextState()

@@ -5,95 +5,170 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              d:DesignHeight="560"
-             d:DesignWidth="900">
-    <Grid Margin="20">
+             d:DesignWidth="1000">
+    <Grid Background="{StaticResource BackgroundPrimary}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0"
-                   Text="Statistika kvaliteta vazduha"
-                   FontSize="22"
-                   FontWeight="Bold"
-                   Margin="0,0,0,16" />
+        <StackPanel Grid.Row="0" Margin="0,0,0,14">
+            <TextBlock Text="STATISTIKA KVALITETA VAZDUHA"
+                       Style="{StaticResource SectionTitleText}"/>
+            <TextBlock Text="Preuzimanje, prilagođavanje i obrada merenja"
+                       Style="{StaticResource MutedText}"
+                       Margin="0,3,0,0"/>
+        </StackPanel>
 
-        <WrapPanel Grid.Row="1" Margin="0,0,0,14">
-            <StackPanel Margin="0,0,12,8">
-                <TextBlock Text="Merna stanica" />
-                <ComboBox Width="220"
-                          ItemsSource="{Binding Stations}"
-                          SelectedItem="{Binding SelectedStation}"
-                          DisplayMemberPath="Name" />
-            </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="285"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="285"/>
+            </Grid.ColumnDefinitions>
 
-            <StackPanel Margin="0,0,12,8">
-                <TextBlock Text="Mesec" />
-                <ComboBox Width="80"
-                          ItemsSource="{Binding Months}"
-                          SelectedItem="{Binding SelectedMonth}" />
-            </StackPanel>
+            <Border Grid.Column="0"
+                    Style="{StaticResource ContentPanelStyle}"
+                    Margin="0,0,14,0">
+                <StackPanel>
+                    <TextBlock Text="FILTERI"
+                               Style="{StaticResource MetricLabelText}"
+                               Foreground="{StaticResource AccentCyan}"
+                               Margin="0,0,0,14"/>
 
-            <StackPanel Margin="0,0,12,8">
-                <TextBlock Text="Godina" />
-                <TextBox Width="90"
-                         Text="{Binding SelectedYear, UpdateSourceTrigger=PropertyChanged}" />
-            </StackPanel>
+                    <TextBlock Text="Merna stanica" Style="{StaticResource FormLabelText}"/>
+                    <ComboBox ItemsSource="{Binding Stations}"
+                              SelectedItem="{Binding SelectedStation}"
+                              DisplayMemberPath="Name"
+                              Margin="0,0,0,12"/>
 
-            <Button Width="130"
-                    Height="28"
-                    Margin="0,18,0,8"
-                    Content="Preuzmi podatke"
-                    Command="{Binding LoadDataCommand}" />
-        </WrapPanel>
+                    <TextBlock Text="Mesec" Style="{StaticResource FormLabelText}"/>
+                    <ComboBox ItemsSource="{Binding Months}"
+                              SelectedItem="{Binding SelectedMonth}"
+                              Margin="0,0,0,12"/>
 
-        <TextBlock Grid.Row="2"
-                   Text="Adaptirana merenja"
-                   FontWeight="SemiBold"
-                   Margin="0,0,0,6" />
+                    <TextBlock Text="Godina" Style="{StaticResource FormLabelText}"/>
+                    <TextBox Text="{Binding SelectedYear, UpdateSourceTrigger=PropertyChanged}"
+                             Margin="0,0,0,18"/>
 
-        <ListBox Grid.Row="3"
-                 ItemsSource="{Binding DisplayReadings}"
-                 Margin="0,0,0,14">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding}"
-                               TextWrapping="Wrap"
-                               Margin="4" />
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+                    <Button Command="{Binding LoadDataCommand}"
+                            Style="{StaticResource PrimaryButtonStyle}"
+                            HorizontalAlignment="Stretch">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Style="{StaticResource PrimaryIconTextStyle}" Text="{StaticResource DownloadIcon}"/>
+                            <TextBlock Style="{StaticResource ButtonTextBlockStyle}" Text="Preuzmi podatke"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </Border>
 
-        <WrapPanel Grid.Row="4" Margin="0,0,0,14">
-            <StackPanel Margin="0,0,12,8">
-                <TextBlock Text="Statisticka metoda" />
-                <ComboBox Width="220"
-                          ItemsSource="{Binding Strategies}"
-                          SelectedItem="{Binding SelectedStrategy}"
-                          DisplayMemberPath="Name" />
-            </StackPanel>
+            <Border Grid.Column="1"
+                    Style="{StaticResource ContentPanelStyle}"
+                    Margin="0,0,14,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
 
-            <Button Width="100"
-                    Height="28"
-                    Margin="0,18,12,8"
-                    Content="Izracunaj"
-                    Command="{Binding CalculateCommand}" />
+                    <Grid Grid.Row="0" Margin="0,0,0,12">
+                        <TextBlock Text="PRILAGOĐENA MERENJA"
+                                   Style="{StaticResource MetricLabelText}"/>
+                    </Grid>
 
-            <Button Width="100"
-                    Height="28"
-                    Margin="0,18,0,8"
-                    Content="Izvezi CSV"
-                    Command="{Binding ExportCsvCommand}" />
-        </WrapPanel>
+                    <ListBox Grid.Row="1"
+                             ItemsSource="{Binding DisplayReadings}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}"
+                                           Style="{StaticResource AppTextBlock}"
+                                           TextWrapping="Wrap"
+                                           Margin="4"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </Border>
 
-        <TextBlock Grid.Row="5"
-                   Text="{Binding Result}"
-                   FontSize="16"
-                   FontWeight="SemiBold"
-                   TextWrapping="Wrap" />
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0"
+                        Style="{StaticResource ContentPanelStyle}"
+                        Margin="0,0,0,14">
+                    <StackPanel>
+                        <TextBlock Text="IZRAČUNAVANJE"
+                                   Style="{StaticResource MetricLabelText}"
+                                   Foreground="{StaticResource AccentCyan}"
+                                   Margin="0,0,0,14"/>
+
+                        <TextBlock Text="Statistička metoda" Style="{StaticResource FormLabelText}"/>
+                        <ComboBox ItemsSource="{Binding Strategies}"
+                                  SelectedItem="{Binding SelectedStrategy}"
+                                  DisplayMemberPath="Name"
+                                  Margin="0,0,0,14"/>
+
+                        <Button Command="{Binding CalculateCommand}"
+                                Style="{StaticResource PrimaryButtonStyle}"
+                                HorizontalAlignment="Stretch"
+                                Margin="0,0,0,10">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource PrimaryIconTextStyle}" Text="{StaticResource CalculateIcon}"/>
+                                <TextBlock Style="{StaticResource ButtonTextBlockStyle}" Text="Izračunaj"/>
+                            </StackPanel>
+                        </Button>
+
+                        <Button Command="{Binding ExportCsvCommand}"
+                                Style="{StaticResource SecondaryButtonStyle}"
+                                HorizontalAlignment="Stretch">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource SecondaryIconTextStyle}" Text="{StaticResource CsvExportIcon}"/>
+                                <TextBlock Style="{StaticResource ButtonTextBlockStyle}" Text="Izvezi CSV"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Row="1"
+                        Style="{StaticResource MetricCardStyle}"
+                        Margin="0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0"
+                                   Text="{Binding Result.MethodName, TargetNullValue=REZULTAT}"
+                                   Style="{StaticResource MetricLabelText}"
+                                   Foreground="{StaticResource AccentCyan}"/>
+
+                        <TextBlock Grid.Row="1"
+                                   Text="{Binding Result.Value, StringFormat={}{0:0.##}, TargetNullValue=--}"
+                                   Style="{StaticResource MetricNumberText}"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+
+                        <TextBlock Grid.Row="2"
+                                   Text="{Binding Result.Unit}"
+                                   Style="{StaticResource MetricLabelText}"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,0,0,10"/>
+
+                        <TextBlock Grid.Row="3"
+                                   Text="{Binding Result.Description}"
+                                   Style="{StaticResource MutedText}"
+                                   TextWrapping="Wrap"
+                                   HorizontalAlignment="Center"
+                                   TextAlignment="Center"/>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
     </Grid>
 </UserControl>

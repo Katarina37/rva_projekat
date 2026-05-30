@@ -46,17 +46,17 @@ namespace AirQuality.Component1.Views
 
             if (string.IsNullOrWhiteSpace(TxtName.Text))
             {
-                TxtError.Text = "Naziv ne smije biti prazan.";
+                TxtError.Text = "Naziv ne sme biti prazan.";
                 return false;
             }
             if (string.IsNullOrWhiteSpace(TxtCity.Text))
             {
-                TxtError.Text = "Grad ne smije biti prazan.";
+                TxtError.Text = "Grad ne sme biti prazan.";
                 return false;
             }
             if (string.IsNullOrWhiteSpace(TxtDistrict.Text))
             {
-                TxtError.Text = "Četvrt ne smije biti prazna.";
+                TxtError.Text = "Četvrt ne sme biti prazna.";
                 return false;
             }
             if (!double.TryParse(TxtLatitude.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out double lat) || lat < -90 || lat > 90)

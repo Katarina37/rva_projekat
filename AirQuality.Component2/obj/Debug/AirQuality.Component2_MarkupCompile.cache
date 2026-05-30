@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component2\App.xaml
-2-1781800129
+101503253244
 
 191133765724
 15-570519908
-MainWindow.xaml;Views\StatisticsView.xaml;
+MainWindow.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\Icons.xaml;Styles\Buttons.xaml;Styles\Cards.xaml;Styles\Inputs.xaml;Styles\DataGrid.xaml;Styles\WindowStyles.xaml;Views\StatisticsView.xaml;
 
 False
 

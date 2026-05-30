@@ -10,7 +10,7 @@ namespace AirQuality.Component2.Services
         public void Export(string path, StatisticsResult result)
         {
             var csv = new StringBuilder();
-            csv.AppendLine("MethodName,Description,Value,Unit");
+            csv.AppendLine("Metoda,Opis,Vrednost,Jedinica");
             csv.AppendLine(string.Format(CultureInfo.InvariantCulture,
                 "{0},{1},{2},{3}",
                 Escape(result.MethodName),

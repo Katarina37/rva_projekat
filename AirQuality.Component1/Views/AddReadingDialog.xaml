@@ -1,61 +1,87 @@
-﻿<Window x:Class="AirQuality.Component1.Views.AddReadingDialog"
+<Window x:Class="AirQuality.Component1.Views.AddReadingDialog"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Dodaj mjerenje" Height="380" Width="400"
+        Title="Dodaj merenje"
+        Height="450" Width="460"
         WindowStartupLocation="CenterOwner"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        Style="{StaticResource DashboardDialogWindowStyle}">
 
-    <Grid Margin="20">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="130"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+    <Grid Background="{StaticResource BackgroundPrimary}">
+        <Border Style="{StaticResource ContentPanelStyle}" Margin="18">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Text="Stanica ID:" 
-                   VerticalAlignment="Center" Margin="0,8"/>
-        <ComboBox Grid.Row="0" Grid.Column="1" Name="CmbStation" 
-                  Margin="0,8" Padding="5"/>
+                <StackPanel Grid.Row="0" Margin="0,0,0,14">
+                    <TextBlock Text="DODAJ MERENJE"
+                               Style="{StaticResource SectionTitleText}"/>
+                    <TextBlock Text="Novo očitavanje kvaliteta vazduha"
+                               Style="{StaticResource MutedText}"
+                               Margin="0,3,0,0"/>
+                </StackPanel>
 
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="PM2.5 (μg/m³):" 
-                   VerticalAlignment="Center" Margin="0,8"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Name="TxtPM25" 
-                 Margin="0,8" Padding="5"/>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="145"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="2" Grid.Column="0" Text="NO2 (μg/m³):" 
-                   VerticalAlignment="Center" Margin="0,8"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Name="TxtNO2" 
-                 Margin="0,8" Padding="5"/>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Stanica ID:" Style="{StaticResource FormLabelText}"/>
+                    <ComboBox Grid.Row="0" Grid.Column="1" Name="CmbStation" Margin="0,6"/>
 
-        <TextBlock Grid.Row="3" Grid.Column="0" Text="Ozon (μg/m³):" 
-                   VerticalAlignment="Center" Margin="0,8"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Name="TxtOzone" 
-                 Margin="0,8" Padding="5"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="PM2.5 (μg/m³):" Style="{StaticResource FormLabelText}"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Name="TxtPM25" Margin="0,6"/>
 
-        <TextBlock Grid.Row="4" Grid.Column="0" Text="Stanje:" 
-                   VerticalAlignment="Center" Margin="0,8"/>
-        <ComboBox Grid.Row="4" Grid.Column="1" Name="CmbState" 
-                  Margin="0,8" Padding="5"/>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="NO2 (μg/m³):" Style="{StaticResource FormLabelText}"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Name="TxtNO2" Margin="0,6"/>
 
-        <!-- Poruka greške -->
-        <TextBlock Grid.Row="5" Grid.ColumnSpan="2" Name="TxtError"
-                   Foreground="Red" TextWrapping="Wrap" Margin="0,8"/>
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Ozon (μg/m³):" Style="{StaticResource FormLabelText}"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Name="TxtOzone" Margin="0,6"/>
 
-        <StackPanel Grid.Row="7" Grid.ColumnSpan="2" 
-                    Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Content="Sačuvaj" Name="BtnSave" 
-                    Click="BtnSave_Click" Width="80" Margin="5,0"/>
-            <Button Content="Odustani" Name="BtnCancel" 
-                    Click="BtnCancel_Click" Width="80" Margin="5,0"/>
-        </StackPanel>
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Stanje:" Style="{StaticResource FormLabelText}"/>
+                    <ComboBox Grid.Row="4" Grid.Column="1" Name="CmbState" Margin="0,6"/>
+                </Grid>
+
+                <TextBlock Grid.Row="2"
+                           Name="TxtError"
+                           Style="{StaticResource ErrorText}"
+                           Margin="0,10,0,6"/>
+
+                <StackPanel Grid.Row="3"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Margin="0,8,0,0">
+                    <Button Name="BtnSave"
+                            Click="BtnSave_Click"
+                            Style="{StaticResource PrimaryButtonStyle}"
+                            Margin="0,0,8,0">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Style="{StaticResource PrimaryIconTextStyle}" Text="{StaticResource SaveIcon}"/>
+                            <TextBlock Style="{StaticResource ButtonTextBlockStyle}" Text="Sačuvaj"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="BtnCancel"
+                            Click="BtnCancel_Click"
+                            Style="{StaticResource DangerButtonStyle}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Style="{StaticResource DangerIconTextStyle}" Text="&#xE711;"/>
+                            <TextBlock Style="{StaticResource ButtonTextBlockStyle}" Text="Odustani"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
     </Grid>
 </Window>

@@ -7,7 +7,7 @@ namespace AirQuality.Component2.Strategies
 {
     public class MaxNo2Strategy : IStatisticsStrategy
     {
-        public string Name => "Max NO2";
+        public string Name => "Maksimalna vrednost NO2";
 
         public StatisticsResult Calculate(Dictionary<string, List<AirQualityReading>> data)
         {

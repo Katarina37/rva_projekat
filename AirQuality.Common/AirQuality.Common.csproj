@@ -66,6 +66,7 @@
     <Compile Include="Interfaces\IMonitoringStationService.cs" />
     <Compile Include="Models\AirQualityReading.cs" />
     <Compile Include="Models\AirQualityState.cs" />
+    <Compile Include="Models\AirQualityStateDisplay.cs" />
     <Compile Include="Models\AirQualityStateFactory.cs" />
     <Compile Include="Models\GoodState.cs" />
     <Compile Include="Models\HazardousState.cs" />

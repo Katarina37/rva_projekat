@@ -20,7 +20,7 @@ namespace AirQuality.Component2.Strategies
                 return new StatisticsResult
                 {
                     MethodName = string.Empty,
-                    Description = "Statisticka metoda nije izabrana.",
+                    Description = "Statistička metoda nije izabrana.",
                     Value = 0,
                     Unit = string.Empty
                 };

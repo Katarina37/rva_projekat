@@ -6,42 +6,119 @@
         <vm:ChartViewModel/>
     </UserControl.DataContext>
 
-    <Grid Margin="14">
+    <Grid Background="{StaticResource BackgroundPrimary}">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0"
-                   Text="Stanja mjerenja u realnom vremenu"
-                   FontSize="18"
-                   FontWeight="Bold"
-                   Margin="0,0,0,10"/>
+        <Grid Grid.Row="0" Margin="0,0,0,14">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
 
-        <Border Grid.Row="1"
-                Background="#F8FAFC"
-                BorderBrush="#CBD5E1"
-                BorderThickness="1"
-                CornerRadius="6"
-                Padding="18"
-                HorizontalAlignment="Stretch">
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="PREGLED KVALITETA VAZDUHA UŽIVO"
+                           Style="{StaticResource SectionTitleText}"/>
+                <TextBlock Text="Stanja merenja u realnom vremenu"
+                           Style="{StaticResource MutedText}"
+                           Margin="0,3,0,0"/>
+            </StackPanel>
+
+            <Border Grid.Column="1"
+                    Background="{StaticResource PanelBackground}"
+                    BorderBrush="{StaticResource BorderDark}"
+                    BorderThickness="1"
+                    CornerRadius="16"
+                    Padding="12,7"
+                    VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource CyanIconTextStyle}"
+                               Text="{StaticResource LiveIcon}"
+                               Margin="0,0,7,0"/>
+                    <TextBlock Text="{Binding TotalReadings, StringFormat=UKUPNO {0}}"
+                               Style="{StaticResource MetricLabelText}"
+                               Foreground="{StaticResource AccentCyan}"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <ItemsControl Grid.Row="1"
+                      ItemsSource="{Binding StateBars}"
+                      Margin="0,0,0,14">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Rows="1" Columns="4"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border Style="{StaticResource MetricCardStyle}"
+                            BorderBrush="{Binding Color}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                <Border Width="8"
+                                        Height="8"
+                                        CornerRadius="4"
+                                        Background="{Binding Color}"
+                                        Margin="0,0,8,0"
+                                        VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding Label}"
+                                           Style="{StaticResource MetricLabelText}"
+                                           Foreground="{Binding Color}"/>
+                            </StackPanel>
+
+                            <TextBlock Grid.Row="1"
+                                       Text="{Binding Count}"
+                                       Style="{StaticResource MetricNumberText}"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Margin="0,8"/>
+
+                            <TextBlock Grid.Row="2"
+                                       Text="MERENJA"
+                                       Style="{StaticResource MutedText}"
+                                       HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <Border Grid.Row="2"
+                Style="{StaticResource ContentPanelStyle}"
+                Padding="22">
             <Grid MinHeight="300">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0"
-                           Text="{Binding TotalReadings, StringFormat=Ukupno mjerenja: {0}}"
-                           FontSize="13"
-                           FontWeight="SemiBold"
-                           Foreground="#334155"
-                           Margin="0,0,0,22"/>
+                <Grid Grid.Row="0" Margin="0,0,0,20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="RASPODELA STANJA"
+                               Style="{StaticResource MetricLabelText}"/>
+                    <TextBlock Grid.Column="1"
+                               Text="UŽIVO"
+                               Style="{StaticResource MetricLabelText}"
+                               Foreground="{StaticResource AccentCyan}"/>
+                </Grid>
 
                 <ItemsControl Grid.Row="1"
                               ItemsSource="{Binding StateBars}"
                               FlowDirection="LeftToRight"
-                              Width="700"
+                              Width="760"
                               HorizontalAlignment="Center"
                               VerticalAlignment="Center">
                     <ItemsControl.ItemsPanel>
@@ -52,59 +129,58 @@
 
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Grid Height="54" Margin="0,0,0,12">
+                            <Grid Height="58" Margin="0,0,0,12">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="118"/>
+                                    <ColumnDefinition Width="132"/>
                                     <ColumnDefinition Width="500"/>
-                                    <ColumnDefinition Width="64"/>
+                                    <ColumnDefinition Width="86"/>
                                 </Grid.ColumnDefinitions>
 
                                 <StackPanel Grid.Column="0"
                                             Orientation="Horizontal"
                                             VerticalAlignment="Center">
                                     <Border Background="{Binding Color}"
-                                            Width="13"
-                                            Height="13"
-                                            CornerRadius="2"
+                                            Width="12"
+                                            Height="12"
+                                            CornerRadius="6"
                                             Margin="0,0,8,0"/>
                                     <TextBlock Text="{Binding Label}"
-                                               FontSize="13"
-                                               FontWeight="SemiBold"
-                                               Foreground="#111827"
-                                               VerticalAlignment="Center"/>
+                                               Style="{StaticResource MetricLabelText}"
+                                               Foreground="{StaticResource TextPrimary}"/>
                                 </StackPanel>
 
                                 <Grid Grid.Column="1"
                                       Height="30"
                                       VerticalAlignment="Center">
-                                    <Border Background="#E5EAF0"
-                                            BorderBrush="#CBD5E1"
+                                    <Border Background="{StaticResource BackgroundSecondary}"
+                                            BorderBrush="{StaticResource BorderDark}"
                                             BorderThickness="1"
-                                            CornerRadius="4"/>
-                                    <Border Background="{Binding Color}"
-                                            Width="{Binding BarWidth}"
+                                            CornerRadius="8"/>
+                                    <Border Width="{Binding BarWidth}"
                                             HorizontalAlignment="Left"
-                                            CornerRadius="4"/>
-                                    <Border Width="2"
-                                            Background="#64748B"
-                                            HorizontalAlignment="Left"
-                                            Margin="1,4,0,4"
-                                            CornerRadius="1"/>
+                                            CornerRadius="8">
+                                        <Border.Background>
+                                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                                <GradientStop Color="{Binding GradientStartColor}" Offset="0"/>
+                                                <GradientStop Color="{Binding Color}" Offset="0.48"/>
+                                                <GradientStop Color="{Binding GradientEndColor}" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                    </Border>
                                 </Grid>
 
                                 <Border Grid.Column="2"
-                                        Background="White"
-                                        BorderBrush="#CBD5E1"
+                                        Background="{StaticResource PanelBackgroundLight}"
+                                        BorderBrush="{StaticResource BorderDark}"
                                         BorderThickness="1"
-                                        CornerRadius="4"
-                                        Width="46"
+                                        CornerRadius="8"
+                                        Width="58"
                                         Height="30"
                                         HorizontalAlignment="Right"
                                         VerticalAlignment="Center">
                                     <TextBlock Text="{Binding Count}"
-                                               FontSize="13"
-                                               FontWeight="Bold"
-                                               Foreground="#111827"
+                                               Style="{StaticResource MetricLabelText}"
+                                               Foreground="{StaticResource TextPrimary}"
                                                HorizontalAlignment="Center"
                                                VerticalAlignment="Center"/>
                                 </Border>

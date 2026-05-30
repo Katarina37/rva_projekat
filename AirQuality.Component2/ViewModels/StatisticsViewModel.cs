@@ -164,7 +164,7 @@ namespace AirQuality.Component2.ViewModels
             {
                 AbortClient(client);
                 AddFallbackStation();
-                MessageBox.Show("WCF servis nije dostupan. Prikazana je demo stanica.",
+                MessageBox.Show("WCF servis nije dostupan. Prikazana je probna stanica.",
                     "Komponenta 2", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
@@ -187,7 +187,7 @@ namespace AirQuality.Component2.ViewModels
             catch
             {
                 AdaptedReadings = CreateFallbackReadings(SelectedStation.Id, month, SelectedYear);
-                MessageBox.Show("WCF servis nije dostupan. Prikazana su demo merenja.",
+                MessageBox.Show("WCF servis nije dostupan. Prikazana su probna merenja.",
                     "Komponenta 2", MessageBoxButton.OK, MessageBoxImage.Information);
             }
 
@@ -206,7 +206,7 @@ namespace AirQuality.Component2.ViewModels
 
             if (SelectedStrategy == null)
             {
-                MessageBox.Show("Izaberite statisticku metodu.",
+                MessageBox.Show("Izaberite statističku metodu.",
                     "Komponenta 2", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
@@ -219,7 +219,7 @@ namespace AirQuality.Component2.ViewModels
         {
             if (Result == null)
             {
-                MessageBox.Show("Prvo izracunajte statistiku.",
+                MessageBox.Show("Prvo izračunajte statistiku.",
                     "Komponenta 2", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
@@ -233,7 +233,7 @@ namespace AirQuality.Component2.ViewModels
             if (dialog.ShowDialog() == true)
             {
                 _csvExportService.Export(dialog.FileName, Result);
-                MessageBox.Show("CSV fajl je sacuvan.",
+                MessageBox.Show("CSV fajl je sačuvan.",
                     "Komponenta 2", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
@@ -267,10 +267,10 @@ namespace AirQuality.Component2.ViewModels
         private string FormatReading(AirQualityReading reading)
         {
             return string.Format(CultureInfo.InvariantCulture,
-                "[PM2.5: {0:0.##}, NO2: {1:0.##}, state: {2}]",
+                "[PM2.5: {0:0.##}, NO2: {1:0.##}, stanje: {2}]",
                 reading.PM25,
                 reading.NO2Level,
-                reading.State);
+                AirQualityStateDisplay.ToSerbianText(reading.State));
         }
 
         private void AddFallbackStation()
@@ -279,7 +279,7 @@ namespace AirQuality.Component2.ViewModels
             Stations.Add(new MonitoringStation
             {
                 Id = Guid.NewGuid(),
-                Name = "Demo stanica",
+                Name = "Probna stanica",
                 City = "Sarajevo",
                 District = "Centar",
                 Latitude = 43.8563,

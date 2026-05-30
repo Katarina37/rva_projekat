@@ -7,7 +7,7 @@ namespace AirQuality.Component2.Strategies
 {
     public class AveragePm25Strategy : IStatisticsStrategy
     {
-        public string Name => "Average PM2.5";
+        public string Name => "Prosečna vrednost PM2.5";
 
         public StatisticsResult Calculate(Dictionary<string, List<AirQualityReading>> data)
         {
@@ -17,7 +17,7 @@ namespace AirQuality.Component2.Strategies
             return new StatisticsResult
             {
                 MethodName = Name,
-                Description = "Prosecna koncentracija PM2.5",
+                Description = "Prosečna koncentracija PM2.5",
                 Value = value,
                 Unit = "μg/m³"
             };

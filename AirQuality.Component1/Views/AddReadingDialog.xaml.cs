@@ -1,6 +1,7 @@
 ﻿using AirQuality.Common.Models;
 using AirQuality.Component1.Services;
 using System;
+using System.Linq;
 using System.Windows;
 
 namespace AirQuality.Component1.Views
@@ -25,7 +26,12 @@ namespace AirQuality.Component1.Views
 
         private void LoadStates()
         {
-            CmbState.ItemsSource = Enum.GetValues(typeof(AirQualityState));
+            CmbState.ItemsSource = Enum.GetValues(typeof(AirQualityState))
+                .Cast<AirQualityState>()
+                .Select(state => new StateOption(state))
+                .ToList();
+            CmbState.DisplayMemberPath = "Name";
+            CmbState.SelectedValuePath = "Value";
         }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
@@ -38,7 +44,7 @@ namespace AirQuality.Component1.Views
                 PM25 = double.Parse(TxtPM25.Text),
                 NO2Level = double.Parse(TxtNO2.Text),
                 OzoneLevel = double.Parse(TxtOzone.Text),
-                State = (AirQualityState)CmbState.SelectedItem,
+                State = (AirQualityState)CmbState.SelectedValue,
                 ReadingTime = DateTime.Now
             };
 
@@ -85,6 +91,18 @@ namespace AirQuality.Component1.Views
             }
 
             return true;
+        }
+        private sealed class StateOption
+        {
+            public StateOption(AirQualityState value)
+            {
+                Value = value;
+                Name = AirQualityStateDisplay.ToSerbianText(value);
+            }
+
+            public AirQualityState Value { get; }
+
+            public string Name { get; }
         }
     }
 }

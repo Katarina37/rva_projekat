@@ -30,14 +30,14 @@ namespace AirQuality.Component1
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
             DataService.Instance.SaveToJson();
-            MessageBox.Show("Podaci uspješno sačuvani.", "Čuvanje", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Podaci su uspešno sačuvani.", "Čuvanje", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void BtnLoad_Click(object sender, RoutedEventArgs e)
         {
             DataService.Instance.LoadFromJson();
             MainContent.Content = new StationView();
-            MessageBox.Show("Podaci uspješno učitani.", "Učitavanje", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Podaci su uspešno učitani.", "Učitavanje", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

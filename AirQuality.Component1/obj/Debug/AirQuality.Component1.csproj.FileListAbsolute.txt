@@ -75,6 +75,10 @@ C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Compone
 C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Component1\obj\Debug\AirQuality.Component1.exe
 C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Component1\obj\Debug\AirQuality.Component1.pdb
 C:\Users\USER\Desktop\rva_projekat_tim12\AirQualityMonitoring\AirQuality.Component1\obj\Debug\AirQuality.Component1.exe.config
+C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\bin\Debug\libSkiaSharp.dylib
+C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\bin\Debug\x86\libSkiaSharp.dll
+C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\bin\Debug\x64\libSkiaSharp.dll
+C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\bin\Debug\arm64\libSkiaSharp.dll
 C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\bin\Debug\AirQuality.Component1.exe.config
 C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\bin\Debug\AirQuality.Component1.exe
 C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\bin\Debug\AirQuality.Component1.pdb
@@ -120,6 +124,14 @@ C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\bin\Debug\System.Tex
 C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\bin\Debug\System.ValueTuple.xml
 C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\AirQuality.Component1.csproj.AssemblyReference.cache
+C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\Styles\Colors.baml
+C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\Styles\Fonts.baml
+C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\Styles\Icons.baml
+C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\Styles\Buttons.baml
+C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\Styles\Cards.baml
+C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\Styles\Inputs.baml
+C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\Styles\DataGrid.baml
+C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\Styles\WindowStyles.baml
 C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\Views\AddReadingDialog.baml
 C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\Views\AddStationDialog.baml
 C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\Views\EditReadingDialog.baml
@@ -136,6 +148,7 @@ C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\App.g.cs
 C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\AirQuality.Component1_MarkupCompile.cache
 C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\AirQuality.Component1_MarkupCompile.lref
+C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\App.baml
 C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\MainWindow.baml
 C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\Views\ChartView.baml
 C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\Views\ReadingView.baml
@@ -147,7 +160,4 @@ C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\AirQuality
 C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\AirQuali.95A8D0AA.Up2Date
 C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\AirQuality.Component1.exe
 C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\AirQuality.Component1.pdb
-C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\bin\Debug\libSkiaSharp.dylib
-C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\bin\Debug\x86\libSkiaSharp.dll
-C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\bin\Debug\x64\libSkiaSharp.dll
-C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\bin\Debug\arm64\libSkiaSharp.dll
+C:\Users\Slavisa\Desktop\rva_projekat\AirQuality.Component1\obj\Debug\AirQuality.Component1.exe.config
